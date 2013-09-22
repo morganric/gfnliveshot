@@ -1,0 +1,33 @@
+<div class="row">
+  <h1>Latest Shots</h1>
+</div>
+
+<div class="row">
+<% @shots.each do |shot| %>
+<h2>
+  <%= link_to shot.needed_by.strftime("%d %b. %Y"), shot_path(shot) %>
+</h2>
+  <div>
+    
+    <div class="well">
+      <%= shot.speak %>
+    </div>
+
+    <label class="label"><%= shot.location %></label>
+    
+    <div> 
+      <h3>
+        via <%= link_to shot.user.name, user_path(shot.user) %> - <%= mail_to shot.user.email %>
+      </h3>
+    </div>
+
+    <div class="pull-right">
+      <span><%= link_to 'Show', shot %></span> |
+      <span><%= link_to 'Edit', edit_shot_path(shot) %></span> |
+      <span><%= link_to 'Delete', shot, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+    </div>
+  
+  </div>
+<% end %>
+</div>
+
