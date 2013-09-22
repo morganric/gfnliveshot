@@ -1,10 +1,13 @@
 <%= link_to "GFN Shot", root_path, :class => 'brand' %>
-<div class="nav-collapse collapse">
+
 <ul class="nav">
-  <li>
-    <%= link_to 'New Shot', new_shot_path %>
-  </li>
+  <% if user_signed_in? %>
+    <li>
+      <%= link_to 'New Shot', new_shot_path, :class => "" %>
+    </li>
+  <% end %>  
 </ul>
+<div class="nav-collapse collapse">
 <ul class="nav pull-right">
   <% if user_signed_in? %>
     <li>
@@ -27,7 +30,7 @@
       <%= link_to 'Causes', causes_path %>
       </li>
       <li>
-      <%= link_to 'Chapters', causes_path %>
+      <%= link_to 'Chapters', chapters_path %>
       </li>
     <% end %>
   <% else %>
