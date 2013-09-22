@@ -18,7 +18,9 @@
     
     <div> 
       <h4>
-        via <%= link_to shot.user.name, user_path(shot.user) %> <br/> <%= mail_to shot.user.email %> <br/> <%= link_to "@#{shot.user.twitter}", "http://twitter.com/#{shot.user.twitter}" %>
+        via <%= link_to shot.user.name, user_path(shot.user) %> 
+        <%= mail_to "<span class='label'><i class='icon icon-envelope icon-white' ></i></span> #{shot.user.email}".html_safe %>
+        <%= link_to "<i class='icon icon-twitter' ></i> @#{shot.user.twitter}".html_safe, "http://twitter.com/#{shot.user.twitter}" %>
       </h4>
     </div>
 

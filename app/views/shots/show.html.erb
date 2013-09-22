@@ -1,21 +1,24 @@
 
-<p class="label">
-  <%= @shot.location %>
-</p>
 
-<p>
+
+<h1>
   <b>Needed by:</b>
   <%= @shot.needed_by.strftime("%d %b. %Y") %>
-</p>
+</h1	>
 
 <p class="well">
   <%= @shot.speak %>
 </p>
 
-<p>
-  <b>via:</b>
-  <%#		= link_to @shot.user.name, user_path(@shot.user) %>
+<p class="label">
+  <i class='icon icon-flag icon-white' ></i> <%= @shot.location %>
 </p>
+
+<h4>
+        via <%= link_to @shot.user.name, user_path(@shot.user) %>
+        <%= mail_to "<span class='label'><i class='icon icon-envelope' ></i></span> #{@shot.user.email}".html_safe %> 
+        <%= link_to "<i class='icon icon-twitter' ></i> @#{@shot.user.twitter}".html_safe, "http://twitter.com/#{@shot.user.twitter}" %>
+</h4>
 
 
 <%= link_to 'Edit', edit_shot_path(@shot) %> |
