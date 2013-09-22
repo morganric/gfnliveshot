@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Gfnliveshot" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "GFN Shot" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Gfnliveshot" %>">
     <%= stylesheet_link_tag "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
@@ -13,6 +13,11 @@
     <div class="navbar navbar-fixed-top navbar-inverse">
       <nav class="navbar-inner">
         <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
           <%= render 'layouts/navigation' %>
         </div>
       </nav>
@@ -27,6 +32,10 @@
             </div>
           </div>
           <footer>
+
+              <div class="row text-center">
+                <%= link_to 'Login', new_user_session_path %> | <%= link_to 'Signup', new_user_path %>
+              </div>
           </footer>
         </div>
       </div> <!--! end of .container -->

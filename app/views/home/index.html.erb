@@ -1,5 +1,16 @@
-<h3>Welcome</h3>
 
-<div class="row">
-<%= link_to 'New Shot', new_shot_path, :class => "btn btn-large btn-success" %>
+<div class="text-center">
+	<%= image_tag "crew.png" %>
+
+	<h1>GFN Shot</h1>
+
+	<h6>Do you need help from the mothership or can you help others to move the badger to it's resting place? Click below!</h6>
+
+	<div class="row ">
+		<%= link_to 'I Need Help!', new_shot_path, :class => "btn btn-lg btn-danger span12" %>
+	</div>
+	<br />
+	<div class="row ">
+		<%= link_to 'I Can Help!', shots_path, :class => "btn btn-lg btn-danger span12" %>
+	</div>
 </div>

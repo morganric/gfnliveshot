@@ -1,4 +1,10 @@
 Gfnliveshot::Application.routes.draw do
+  resources :chapters
+
+
+  resources :causes
+
+
   resources :shots
 
 

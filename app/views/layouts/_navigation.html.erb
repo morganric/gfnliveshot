@@ -1,4 +1,5 @@
-<%= link_to "GFN Liveshot", root_path, :class => 'brand' %>
+<%= link_to "GFN Shot", root_path, :class => 'brand' %>
+<div class="nav-collapse collapse">
 <ul class="nav">
   <li>
     <%= link_to 'New Shot', new_shot_path %>
@@ -22,6 +23,9 @@
       <li>
       <%= link_to 'Admin', users_path %>
       </li>
+      <li>
+      <%= link_to 'Causes', causes_path %>
+      </li>
     <% end %>
   <% else %>
     <li>
@@ -29,4 +33,4 @@
     </li>
   <% end %>
 </ul>
-
+</div>

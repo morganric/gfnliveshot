@@ -17,3 +17,25 @@ body { padding-top: 60px; }
 
 // Whatever application styles you have go last
 // @import "base";
+
+footer {
+	margin-top: 40px;
+}
+
+.navbar-inner {
+	background: white !important;
+}
+
+.navbar .collapsed  a {
+	color: #18bc9c !important;
+}
+
+.collapsed a:hover {
+	color: #fff !important;
+}
+
+.navbar .brand {
+	color: #fff !important;
+	text-indent: -999px;
+	background: url('bird.jpg') no-repeat;
+}
