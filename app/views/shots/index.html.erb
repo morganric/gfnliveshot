@@ -18,7 +18,7 @@
     
     <div> 
       <h4>
-        via <%= link_to shot.user.name, user_path(shot.user) %> - <%= mail_to shot.user.email %>
+        via <%= link_to shot.user.name, user_path(shot.user) %> <br/> <%= mail_to shot.user.email %> <br/> <%= link_to "@#{shot.user.twitter}", "http://twitter.com/#{shot.user.twitter}" %>
       </h4>
     </div>
 
