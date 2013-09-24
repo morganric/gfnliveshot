@@ -1,6 +1,3 @@
-
-
-
 <h1>
   <b>Needed by:</b>
   <%= @shot.needed_by.strftime("%d %b. %Y") %>
@@ -14,10 +11,16 @@
   <i class='icon icon-flag icon-white' ></i> <%= @shot.location %>
 </p>
 
+<p class="label label-success">
+  <i class='icon icon-white icon-plus' ></i> <%= @shot.cause.name %>
+</p>
+
 <h4>
         via <%= link_to @shot.user.name, user_path(@shot.user) %>
-        <%= mail_to "<span class='label'><i class='icon icon-envelope' ></i></span> #{@shot.user.email}".html_safe %> 
+        <span class="pull-right">
+        <%= mail_to "<span class='label'><i class='icon icon-envelope icon-white' ></i></span> #{@shot.user.email}".html_safe %> 
         <%= link_to "<i class='icon icon-twitter' ></i> @#{@shot.user.twitter}".html_safe, "http://twitter.com/#{@shot.user.twitter}" %>
+      </span>
 </h4>
 
 
