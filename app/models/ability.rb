@@ -9,6 +9,8 @@ class Ability
 
     if user.has_role? :user
       can :read, :create, :update, :destroy, Shots
+      can :read, Causes
+      can :read, Chapters
     end
     # Define abilities for the passed in user here. For example:
     #
