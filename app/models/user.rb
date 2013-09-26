@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   rolify
+  after_create :assign_default_role
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -17,5 +18,9 @@ class User < ActiveRecord::Base
   # belongs_to :chapter
 
   accepts_nested_attributes_for :chapter, :limit => 1
+
+  def assign_default_role
+    add_role(:user)
+  end
 
 end

@@ -3,14 +3,15 @@ class Ability
 
   def initialize(user)
     user ||= User.new # guest user (not logged in)
+    alias_action :create, :read, :update, :destroy, :to => :crud
     if user.has_role? :admin
       can :manage, :all
     end
 
     if user.has_role? :user
-      can :read, :create, :update, :destroy, Shots
-      can :read, Causes
-      can :read, Chapters
+      can :crud, Shot
+      can :crud, Chapter
+      can :crud, Cause
     end
     # Define abilities for the passed in user here. For example:
     #
